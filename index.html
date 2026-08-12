@@ -3,487 +3,373 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050505">
-<title>For Sana — My Safest Place ❤️</title>
+
+<title>For Sana ❤️</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    background:#050505;
-    color:#fff;
-    font-family:Georgia,"Times New Roman",serif;
-    overflow-x:hidden;
-}
-
-button{
-    font:inherit;
-}
-
-.hidden{
-    display:none!important;
+body {
+    background: #050505;
+    color: white;
+    font-family: Georgia, serif;
+    overflow-x: hidden;
 }
 
 /* INTRO */
 
-#intro{
-    position:fixed;
-    inset:0;
-    z-index:9999;
+#intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
     background:
-        radial-gradient(circle at 50% 45%,rgba(150,0,30,.18),transparent 35%),
-        #030303;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    transition:opacity 1.5s ease,visibility 1.5s ease;
+        radial-gradient(
+            circle at center,
+            rgba(150, 0, 35, 0.25),
+            #050505 65%
+        );
+
+    transition: opacity 1.2s ease;
 }
 
-#intro.hide{
-    opacity:0;
-    visibility:hidden;
+.intro-content {
+    width: 90%;
+    max-width: 600px;
 }
 
-.intro-content{
-    width:90%;
-    max-width:600px;
+.small-title {
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
 }
 
-.tiny{
-    font-family:Arial,sans-serif;
-    color:#777;
-    font-size:10px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    margin-bottom:25px;
+h1 {
+    font-size: clamp(55px, 15vw, 100px);
+    font-weight: normal;
+    line-height: 0.95;
 }
 
-.intro-title{
-    font-size:clamp(48px,14vw,95px);
-    line-height:.9;
-    font-weight:normal;
+.red {
+    color: #e50935;
+    text-shadow: 0 0 30px rgba(229, 9, 53, 0.45);
 }
 
-.red{
-    color:#e50935;
-    text-shadow:0 0 35px rgba(229,9,53,.45);
+.line {
+    width: 90px;
+    height: 1px;
+    background: #e50935;
+    margin: 30px auto;
 }
 
-.intro-line{
-    width:0;
-    height:1px;
-    background:#e50935;
-    margin:30px auto;
-    animation:grow 2s 1s forwards;
+.intro-message {
+    color: #aaa;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.9;
 }
 
-.intro-text{
-    color:#aaa;
-    font-family:Arial,sans-serif;
-    font-size:14px;
-    line-height:1.9;
-    opacity:0;
-    animation:fade 2s 2s forwards;
+.enter-button {
+    margin-top: 35px;
+
+    padding: 15px 30px;
+
+    border: 1px solid #e50935;
+    border-radius: 50px;
+
+    background: transparent;
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
 }
 
-.enter{
-    margin-top:35px;
-    padding:15px 30px;
-    color:white;
-    background:transparent;
-    border:1px solid rgba(229,9,53,.6);
-    border-radius:50px;
-    font-family:Arial,sans-serif;
-    font-size:11px;
-    letter-spacing:2px;
-    cursor:pointer;
-    opacity:0;
-    animation:fade 2s 3s forwards;
-    transition:.4s;
+.enter-button:hover {
+    background: #e50935;
+    box-shadow: 0 0 30px rgba(229, 9, 53, 0.4);
 }
 
-.enter:hover{
-    background:#e50935;
-    box-shadow:0 0 35px rgba(229,9,53,.35);
+/* MAIN */
+
+#main {
+    display: none;
 }
 
-/* FLOATING HEARTS */
-
-.heart{
-    position:fixed;
-    bottom:-30px;
-    color:#e50935;
-    z-index:3;
-    pointer-events:none;
-    opacity:0;
-    animation:float linear forwards;
+#main.show {
+    display: block;
 }
 
 /* HERO */
 
-.hero{
-    min-height:100svh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:30px 22px;
-    background:
-        radial-gradient(circle at 50% 40%,rgba(229,9,53,.12),transparent 40%);
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px 20px;
 }
 
-.hero-inner{
-    max-width:750px;
+.hero-content {
+    max-width: 700px;
 }
 
-.chapter{
-    color:#e50935;
-    font-family:Arial,sans-serif;
-    font-size:10px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    margin-bottom:25px;
+.hero h2 {
+    font-size: clamp(45px, 12vw, 90px);
+    font-weight: normal;
+    line-height: 1;
 }
 
-.hero h1{
-    font-size:clamp(55px,15vw,110px);
-    font-weight:normal;
-    line-height:.9;
+.hero h2 span {
+    display: block;
+    color: #e50935;
+    font-style: italic;
 }
 
-.hero h1 span{
-    display:block;
-    color:#e50935;
-    font-style:italic;
-}
+.hero p {
+    margin-top: 35px;
 
-.subtitle{
-    color:#aaa;
-    font-size:16px;
-    line-height:2;
-    max-width:600px;
-    margin:35px auto 0;
-}
+    color: #aaa;
 
-.scroll{
-    margin-top:65px;
-    color:#555;
-    font-family:Arial,sans-serif;
-    font-size:10px;
-    letter-spacing:3px;
-    animation:pulse 2s infinite;
+    font-size: 17px;
+    line-height: 2;
 }
 
 /* STORY */
 
-.story{
-    min-height:100svh;
-    padding:120px 22px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.story {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 22px;
 }
 
-.inner{
-    width:100%;
-    max-width:720px;
+.story-inner {
+    width: 100%;
+    max-width: 700px;
 }
 
-.num{
-    color:#e50935;
-    font-family:Arial,sans-serif;
-    font-size:10px;
-    letter-spacing:4px;
-    margin-bottom:22px;
+.chapter {
+    color: #e50935;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
 }
 
-h2{
-    font-size:clamp(38px,10vw,70px);
-    line-height:1.05;
-    font-weight:normal;
-    margin-bottom:38px;
+.story h2 {
+    font-size: clamp(38px, 10vw, 65px);
+    font-weight: normal;
+
+    line-height: 1.05;
+
+    margin-bottom: 35px;
 }
 
-h2 em{
-    color:#e50935;
-    font-style:italic;
+.story h2 span {
+    color: #e50935;
 }
 
-p{
-    color:#c3c3c3;
-    font-size:17px;
-    line-height:2;
-    margin-bottom:25px;
+.story p {
+    color: #c5c5c5;
+
+    font-size: 17px;
+    line-height: 2;
+
+    margin-bottom: 25px;
 }
 
-.quote{
-    border-left:2px solid #e50935;
-    padding-left:20px;
-    margin:45px 0;
-    font-size:21px;
-    line-height:1.7;
-    color:#fff;
-    font-style:italic;
-}
+.quote {
+    border-left: 2px solid #e50935;
 
-.big{
-    min-height:75svh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:50px 25px;
-    background:
-        radial-gradient(circle,rgba(229,9,53,.14),transparent 55%);
-}
+    padding-left: 20px;
 
-.big div{
-    max-width:750px;
-    font-size:clamp(29px,8vw,58px);
-    line-height:1.35;
-}
+    margin: 40px 0;
 
-.big span{
-    color:#e50935;
+    color: white;
+
+    font-size: 21px;
+    line-height: 1.7;
+
+    font-style: italic;
 }
 
 /* PHOTO */
 
-.photo{
-    max-width:420px;
-    aspect-ratio:4/5;
-    margin:45px auto;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+.photo {
+    width: 100%;
+    max-width: 400px;
+
+    aspect-ratio: 4 / 5;
+
+    margin: 40px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border: 1px solid rgba(229, 9, 53, 0.4);
+
     background:
-        radial-gradient(circle,rgba(229,9,53,.12),transparent 55%),
+        radial-gradient(
+            circle,
+            rgba(229, 9, 53, 0.15),
+            transparent 60%
+        ),
         #090909;
-    border:1px solid rgba(229,9,53,.3);
-    position:relative;
-    overflow:hidden;
 }
 
-.photo:before{
-    content:"";
-    position:absolute;
-    inset:12px;
-    border:1px solid rgba(255,255,255,.05);
+.photo span {
+    color: #666;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    line-height: 1.8;
 }
 
-.photo span{
-    position:relative;
-    color:#666;
-    font-family:Arial,sans-serif;
-    font-size:10px;
-    letter-spacing:2px;
-    line-height:1.8;
-    padding:25px;
+/* BUTTON */
+
+.reveal-button {
+    display: block;
+
+    margin: 40px auto;
+
+    padding: 15px 28px;
+
+    border: 1px solid #e50935;
+    border-radius: 50px;
+
+    background: transparent;
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+
+    cursor: pointer;
 }
 
-/* BUTTONS */
-
-.reveal{
-    display:block;
-    margin:40px auto;
-    padding:15px 28px;
-    color:white;
-    background:transparent;
-    border:1px solid rgba(229,9,53,.55);
-    border-radius:50px;
-    cursor:pointer;
-    font-family:Arial,sans-serif;
-    font-size:11px;
-    letter-spacing:1px;
-    transition:.4s;
+.reveal-button:hover {
+    background: #e50935;
 }
 
-.reveal:hover{
-    background:#e50935;
+.secret {
+    display: none;
+
+    padding: 25px;
+
+    border: 1px solid rgba(229, 9, 53, 0.25);
+
+    background: rgba(255,255,255,0.02);
 }
 
-.message{
-    padding:28px;
-    border:1px solid rgba(229,9,53,.25);
-    background:rgba(255,255,255,.025);
-    animation:appear .8s ease;
-}
-
-.message p:last-child{
-    margin-bottom:0;
-}
-
-/* LOVE MESSAGE */
-
-.love-card{
-    text-align:center;
-    padding:55px 25px;
-    border:1px solid rgba(229,9,53,.2);
-    background:rgba(255,255,255,.015);
-}
-
-.love-card .heart-icon{
-    font-size:45px;
-    color:#e50935;
-    margin-bottom:25px;
-    animation:heartbeat 1.6s infinite;
-}
-
-.love-card p{
-    color:#ddd;
+.secret.show {
+    display: block;
 }
 
 /* FINAL */
 
-.final{
-    min-height:100svh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:60px 25px;
+.final {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
     background:
-        radial-gradient(circle at center,rgba(229,9,53,.16),transparent 50%);
+        radial-gradient(
+            circle,
+            rgba(229, 9, 53, 0.15),
+            transparent 55%
+        );
 }
 
-.final-inner{
-    max-width:700px;
+.final-inner {
+    max-width: 700px;
 }
 
-.final h2{
-    font-size:clamp(45px,12vw,85px);
+.final h2 {
+    font-size: clamp(45px, 12vw, 85px);
+    font-weight: normal;
 }
 
-.final-line{
-    margin:35px 0;
-    font-size:22px;
-    line-height:2.1;
-    color:#ddd;
+.final p {
+    color: #ccc;
+
+    font-size: 20px;
+    line-height: 2;
+
+    margin-top: 35px;
 }
 
-.final-line span{
-    display:block;
-    opacity:0;
-    animation:fadeUp 1.5s forwards;
-}
+.signature {
+    margin-top: 50px;
 
-.final-line span:nth-child(1){animation-delay:1s;}
-.final-line span:nth-child(2){animation-delay:3s;}
-.final-line span:nth-child(3){animation-delay:5s;}
+    color: #e50935;
 
-.signature{
-    margin-top:55px;
-    color:#e50935;
-    font-size:20px;
-    font-style:italic;
-    opacity:0;
-    animation:fadeUp 1.5s 7s forwards;
-}
-
-footer{
-    padding:40px 20px 70px;
-    text-align:center;
-}
-
-footer p{
-    color:#444;
-    font-family:Arial,sans-serif;
-    font-size:9px;
-    letter-spacing:3px;
-}
-
-/* ANIMATIONS */
-
-@keyframes fade{
-    from{opacity:0;transform:translateY(15px);}
-    to{opacity:1;transform:translateY(0);}
-}
-
-@keyframes grow{
-    to{width:110px;}
-}
-
-@keyframes pulse{
-    0%,100%{opacity:.25;}
-    50%{opacity:.8;}
-}
-
-@keyframes float{
-    0%{
-        transform:translateY(0) rotate(0);
-        opacity:0;
-    }
-    10%{opacity:.7;}
-    90%{opacity:.25;}
-    100%{
-        transform:translateY(-110vh) rotate(360deg);
-        opacity:0;
-    }
-}
-
-@keyframes appear{
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes heartbeat{
-    0%,100%{transform:scale(1);}
-    15%{transform:scale(1.18);}
-    30%{transform:scale(1);}
-    45%{transform:scale(1.12);}
-}
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+    font-size: 20px;
+    font-style: italic;
 }
 
 /* MOBILE */
 
-@media(max-width:600px){
+@media (max-width: 600px) {
 
-    .story{
-        padding:100px 20px;
-        min-height:auto;
+    .story {
+        padding: 90px 20px;
     }
 
-    p{
-        font-size:16px;
-        line-height:1.9;
+    .story p {
+        font-size: 16px;
+        line-height: 1.9;
     }
 
-    .quote{
-        font-size:19px;
-    }
-
-    .photo{
-        max-width:340px;
+    .quote {
+        font-size: 19px;
     }
 }
 </style>
 </head>
+
 
 <body>
 
@@ -493,24 +379,31 @@ footer p{
 
     <div class="intro-content">
 
-        <div class="tiny">
-            This was made for one person
+        <div class="small-title">
+            A little piece of my heart
         </div>
 
-        <div class="intro-title">
-            My <span class="red">Sana</span>
+        <h1>
+            For
+            <span class="red">Sana</span>
+        </h1>
+
+        <div class="line"></div>
+
+        <div class="intro-message">
+            I couldn't put everything I feel
+            into an ordinary message.
+            <br><br>
+            So I made you a little place
+            where my heart could speak.
         </div>
 
-        <div class="intro-line"></div>
+        <button
+            class="enter-button"
+            onclick="enterHeart()">
 
-        <div class="intro-text">
-            There are feelings that don't fit inside
-            ordinary messages.<br>
-            So I made you somewhere to find mine.
-        </div>
+            ENTER MY HEART ❤️
 
-        <button class="enter" onclick="enterStory()">
-            ENTER MY HEART
         </button>
 
     </div>
@@ -518,60 +411,56 @@ footer p{
 </div>
 
 
-<main id="main">
+<!-- MAIN -->
+
+<div id="main">
+
 
 <!-- HERO -->
 
 <section class="hero">
 
-<div class="hero-inner">
+    <div class="hero-content">
 
-<div class="chapter">
-A story that started unexpectedly
-</div>
+        <div class="chapter">
+            OUR LITTLE STORY
+        </div>
 
-<h1>
-My
-<span>Safest Place</span>
-</h1>
+        <h2>
+            My
+            <span>Safest Place</span>
+        </h2>
 
-<div class="subtitle">
-Sana, this isn't something I made because I know
-how to code.<br><br>
+        <p>
+            Sana, this isn't just a website.
+            <br><br>
+            It's everything I sometimes
+            don't know how to say.
+        </p>
 
-I made it because sometimes a heart has
-too many things to say,
-and a simple message isn't big enough
-to hold them all.
-</div>
-
-<div class="scroll">
-SCROLL SLOWLY ↓
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- 01 -->
+<!-- CHAPTER 1 -->
 
 <section class="story">
 
-<div class="inner">
+<div class="story-inner">
 
-<div class="num">CHAPTER 01</div>
+<div class="chapter">
+CHAPTER 01
+</div>
 
 <h2>
-It began with one<br>
-small <em>hello.</em>
+It started with one
+<span>hello.</span>
 </h2>
 
 <p>
-I was simply scrolling through Instagram.
-I wasn't searching for a love story.
-I wasn't expecting to find someone who
-would eventually become this important to me.
+I was scrolling through Instagram.
+I wasn't expecting anything special.
 </p>
 
 <p>
@@ -579,81 +468,62 @@ Then I saw your profile.
 </p>
 
 <p>
-Something about you made me stop.
-Especially your eyes.
-</p>
-
-<p>
-And I did something very simple.
-</p>
-
-<div class="big">
-<div>
-I sent you
-<br>
-<span>“Hello.”</span>
-</div>
-</div>
-
-<p>
-It was only one word.
-But today, when I think about it,
-I realize that one little word changed
-the direction of my life in a way
-I never expected.
+Your eyes caught my attention first.
+There was something about them
+that made me stop.
 </p>
 
 <div class="quote">
-Sometimes you don't recognize the beginning
-of something beautiful until you look back.
+So I did the simplest thing.
+I sent you one little “Hello.”
 </div>
+
+<p>
+I had absolutely no idea that
+one tiny message would eventually
+lead me here.
+</p>
 
 </div>
 
 </section>
 
 
-<!-- 02 -->
+<!-- CHAPTER 2 -->
 
 <section class="story">
 
-<div class="inner">
+<div class="story-inner">
 
-<div class="num">CHAPTER 02</div>
+<div class="chapter">
+CHAPTER 02
+</div>
 
 <h2>
-You<br>
-<span class="red">replied.</span>
+Then you
+<span>replied.</span>
 </h2>
 
 <p>
-You replied politely.
-And from that simple reply,
-we started chatting on Instagram.
+You replied politely,
+and we started chatting on Instagram.
 </p>
 
 <p>
-There was no big dramatic beginning.
-No perfect movie scene.
-Just two people talking.
+Nothing was forced.
+We simply talked.
 </p>
 
 <p>
-But somehow the conversations became
-something I started looking forward to.
-</p>
-
-<p>
-They felt natural.
-We could talk about things.
-We could laugh.
-We could share parts of our days.
+But slowly, our conversations
+became something I started
+looking forward to.
 </p>
 
 <div class="quote">
-I didn't know where our conversations
-were going.
-I only knew that I wanted them to continue.
+I didn't know where the conversation
+was going.
+I only knew I wanted it to continue.
 </div>
 
 </div>
@@ -661,73 +531,70 @@ I only knew that I wanted them to continue.
 </section>
 
 
-<!-- 03 -->
+<!-- CHAPTER 3 -->
 
 <section class="story">
 
-<div class="inner">
+<div class="story-inner">
 
-<div class="num">CHAPTER 03</div>
+<div class="chapter">
+CHAPTER 03
+</div>
 
 <h2>
-Your eyes caught<br>
-me <em>first.</em>
+Your eyes caught me.
+<br>
+Your heart kept me.
 </h2>
 
 <div class="photo">
+
 <span>
-SANA'S PHOTO<br><br>
-PHOTO PLACEHOLDER<br><br>
-We'll add her real photo later.
+SANA'S PHOTO ❤️
+<br><br>
+PHOTO WILL BE ADDED LATER
 </span>
+
 </div>
 
 <p>
-I'm not going to pretend otherwise.
 Your eyes were one of the first things
-that attracted me to you.
+that attracted me.
 </p>
 
 <p>
-There was something about them that made
-me feel peace and nervousness at the same time.
-Warmth.
-And that strange feeling of getting lost
-without wanting to find your way out.
+But the more I knew you,
+the more I realized I wasn't
+falling for a picture.
+</p>
+
+<p>
+I was falling for the person behind it.
 </p>
 
 <div class="quote">
 Your eyes caught my attention.
-But your heart made me stay.
+Your heart made me stay.
 </div>
-
-<p>
-Because the more I talked to you,
-the more I understood that I wasn't
-falling for a photograph.
-</p>
-
-<p>
-I was beginning to know the person
-behind the photograph.
-</p>
 
 </div>
 
 </section>
 
 
-<!-- 04 -->
+<!-- CHAPTER 4 -->
 
 <section class="story">
 
-<div class="inner">
+<div class="story-inner">
 
-<div class="num">CHAPTER 04</div>
+<div class="chapter">
+CHAPTER 04
+</div>
 
 <h2>
-Then I started<br>
-knowing <em>you.</em>
+I started falling for
+<span>the real you.</span>
 </h2>
 
 <p>
@@ -735,222 +602,145 @@ Your pure heart.
 </p>
 
 <p>
-The fact that you never seemed to need
-to pretend to be someone you're not.
-</p>
-
-<p>
-You were real.
-</p>
-
-<p>
-And that mattered to me more than I can explain.
-</p>
-
-<p>
-I started noticing your habits.
-Your thinking.
-Your kindness.
 Your honesty.
+</p>
+
+<p>
+Your kindness.
+</p>
+
+<p>
 Your patience.
+</p>
+
+<p>
 Your ambition.
-The way you treat people.
-The way you handle problems.
 </p>
 
 <p>
-Even your anger.
-Even the tiny things.
+Your thinking.
 </p>
-
-<div class="quote">
-I didn't fall in love with some perfect version
-of you that I invented.
-I started loving the real you.
-</div>
-
-<p>
-The more I knew you,
-the more I felt that there was something
-different about what was happening to me.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- 05 -->
-
-<section class="story">
-
-<div class="inner">
-
-<div class="num">CHAPTER 05</div>
-
-<h2>
-Somewhere between<br>
-the messages, I <em>fell.</em>
-</h2>
-
-<p>
-I don't know exactly when it happened.
-</p>
-
-<p>
-There wasn't one magical second
-where everything changed.
-</p>
-
-<p>
-It happened slowly.
-Conversation after conversation.
-Night after night.
-Little thing after little thing.
-</p>
-
-<p>
-I started waiting for your messages.
-I started noticing when you were online.
-I started missing you when you weren't there.
-</p>
-
-<p>
-And eventually I understood:
-</p>
-
-<div class="big">
-<div>
-I wasn't simply enjoying
-<br>
-<span>talking to you anymore.</span>
-</div>
-</div>
-
-<p>
-I had started caring about you.
-Deeply.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- 06 -->
-
-<section class="story">
-
-<div class="inner">
-
-<div class="num">CHAPTER 06</div>
-
-<h2>
-The little things<br>
-became <em>everything.</em>
-</h2>
 
 <p>
 Your habits.
 </p>
 
 <p>
-Your way of thinking.
+Even your anger.
 </p>
 
 <p>
-The way you get angry.
-</p>
-
-<p>
-The way you reply.
-</p>
-
-<p>
-The little details that probably don't
-look important from the outside.
-</p>
-
-<p>
-But when someone becomes important to you,
-their tiny things stop being tiny.
+Even the tiny things.
 </p>
 
 <div class="quote">
-I started loving pieces of you
-that you probably never realized
-I was paying attention to.
+I never needed you to pretend
+to be perfect.
+I loved that you were real.
 </div>
-
-<p>
-That's one of the strange things about love.
-Sometimes it's not the huge things
-that make someone special.
-</p>
-
-<p>
-It's the tiny things you quietly begin
-to remember.
-</p>
 
 </div>
 
 </section>
 
 
-<!-- 07 -->
+<!-- CHAPTER 5 -->
 
 <section class="story">
 
-<div class="inner">
+<div class="story-inner">
 
-<div class="num">CHAPTER 07</div>
+<div class="chapter">
+CHAPTER 05
+</div>
 
 <h2>
-You became my<br>
-<span class="red">peace.</span>
+Somewhere between
+the messages,
+<span>I fell.</span>
+</h2>
+
+<p>
+I started waiting for your messages.
+</p>
+
+<p>
+I started noticing when you were online.
+</p>
+
+<p>
+I started enjoying our late-night
+conversations.
+</p>
+
+<p>
+Talking about our days.
+Laughing together.
+Sharing personal things.
+</p>
+
+<p>
+And somehow time would disappear.
+</p>
+
+<div class="quote">
+I didn't notice the exact moment
+I fell in love.
+I just realized one day
+that I had already fallen.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CHAPTER 6 -->
+
+<section class="story">
+
+<div class="story-inner">
+
+<div class="chapter">
+CHAPTER 06
+</div>
+
+<h2>
+You became my
+<span>peace.</span>
 </h2>
 
 <p>
 There is something about you
-that I still find difficult to explain.
+that makes me feel stress-free.
 </p>
 
 <p>
-When I see your name,
-I feel stress-free.
+When I talk to you,
+the noise in my head becomes quieter.
 </p>
 
 <p>
-It's like the noise inside my head
-becomes quieter.
+I feel warmth.
 </p>
 
 <p>
-I feel lighter.
+I feel safe.
 </p>
 
 <p>
-And somewhere inside me,
-I get this feeling that I am in safe hands.
+I feel like I'm in safe hands.
 </p>
 
-<div class="big">
-<div>
-Your name became
-<br>
-<span>a little place of peace.</span>
-</div>
+<div class="quote">
+Some people enter your life
+and somehow become a place
+where your heart feels safe.
 </div>
 
 <p>
-Maybe that's why I don't just call you someone
-I love.
-</p>
-
-<p>
-You became someone whose presence
-makes life feel a little easier.
+For me,
+that person became you.
 </p>
 
 </div>
@@ -958,61 +748,60 @@ makes life feel a little easier.
 </section>
 
 
-<!-- 08 -->
+<!-- CHAPTER 7 -->
 
 <section class="story">
 
-<div class="inner">
+<div class="story-inner">
 
-<div class="num">CHAPTER 08</div>
+<div class="chapter">
+CHAPTER 07
+</div>
 
 <h2>
-Then came the words<br>
-I couldn't <em>believe.</em>
+Then you said the words
+I couldn't
+<span>believe.</span>
 </h2>
 
 <p>
-There is one moment I don't think
-I will ever forget.
+There is one moment
+I don't think I'll forget.
 </p>
 
 <p>
-You sent me those words:
+You wrote:
 </p>
 
-<div class="big">
-<div>
+<div class="quote">
 “I love you too.”
-<br>
-<span>❤️</span>
-</div>
 </div>
 
 <p>
-And my heart...
+My heart was shaking.
 </p>
 
 <p>
-It was shaking.
+I remember feeling like
+it couldn't be real.
 </p>
 
 <p>
-I remember feeling almost like
-it wasn't real.
-Like something I had hoped for
-had suddenly happened,
-and my mind couldn't catch up with my heart.
+I had read the words,
+but my heart was still trying
+to understand them.
 </p>
 
 <div class="quote">
-For a moment, I didn't know whether
-to believe my eyes or my happiness.
+For a moment,
+I didn't know whether
+to believe my eyes
+or my happiness.
 </div>
 
 <p>
-But I knew one thing:
-those words meant more to me
-than I could explain at that moment.
+But I knew those words
+meant everything to me.
 </p>
 
 </div>
@@ -1020,269 +809,52 @@ than I could explain at that moment.
 </section>
 
 
-<!-- 09 HEARTBEAT -->
+<!-- CHAPTER 8 -->
 
 <section class="story">
 
-<div class="inner">
+<div class="story-inner">
 
-<div class="num">CHAPTER 09</div>
-
-<div class="love-card">
-
-<div class="heart-icon">♥</div>
-
-<p>
-Some moments don't need a thousand words.
-</p>
-
-<p>
-Sometimes one sentence from the right person
-can make your entire heart feel different.
-</p>
-
-<p>
-That was one of those moments for me.
-</p>
-
+<div class="chapter">
+CHAPTER 08
 </div>
-
-</div>
-
-</section>
-
-
-<!-- 10 -->
-
-<section class="story">
-
-<div class="inner">
-
-<div class="num">CHAPTER 10</div>
 
 <h2>
-The conversations<br>
-I never wanted to <em>end.</em>
+What I want you
+to know.
 </h2>
 
 <p>
-I love how natural our conversations feel.
+My feelings for you
+aren't something I want
+to treat casually.
 </p>
 
 <p>
-How quickly time disappears.
+I want my love to be honest.
 </p>
 
 <p>
-How we can talk about personal things.
+I want to protect your trust.
 </p>
 
 <p>
-How we can laugh together.
+I want to listen when you're upset.
 </p>
 
 <p>
-How telling each other about our days
-can somehow make an ordinary day feel special.
-</p>
-
-<div class="quote">
-Sometimes I look at the time and realize
-that hours have passed,
-and somehow it feels like minutes.
-</div>
-
-<p>
-And then there is that little feeling
-when I find myself waiting for your message.
-</p>
-
-<p>
-Waiting to see your name appear.
-</p>
-
-<p>
-Waiting for another conversation.
-</p>
-
-<p>
-Waiting for that familiar feeling
-that comes when you're there.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- 11 -->
-
-<section class="story">
-
-<div class="inner">
-
-<div class="num">CHAPTER 11</div>
-
-<h2>
-What I am<br>
-afraid of <em>losing.</em>
-</h2>
-
-<p>
-I don't want to lose you.
-</p>
-
-<p>
-But I also don't want to lose
-your trust.
-</p>
-
-<p>
-I don't want to lose our conversations.
-</p>
-
-<p>
-I don't want to lose the little connection
-we created from something that started
-with one Instagram hello.
-</p>
-
-<div class="quote">
-The thought of losing your trust
-scares me because I know
-how precious it is to me.
-</div>
-
-<p>
-And if I ever make a mistake,
-I don't want my answer to be running away.
-</p>
-
-<p>
-I want to wait.
-</p>
-
-<p>
-I want to say sorry.
-</p>
-
-<p>
-I want to explain honestly.
-</p>
-
-<p>
-I want to try to repair what I hurt.
-</p>
-
-<p>
-Because leaving is easy.
-Trying to make things right
-takes love.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- 12 -->
-
-<section class="story">
-
-<div class="inner">
-
-<div class="num">CHAPTER 12</div>
-
-<h2>
-What I want<br>
-to be for <em>you.</em>
-</h2>
-
-<p>
-I don't only want to be someone
-you love.
+I want to support your dreams.
 </p>
 
 <p>
 I want to be your safe place.
 </p>
 
-<p>
-Your biggest supporter.
-</p>
-
-<p>
-A peaceful person in your life.
-</p>
-
 <div class="quote">
-When the world feels too loud,
-I want you to know there is still
-someone who wants to listen.
-</div>
-
-<p>
-When you're upset,
-I want to listen.
-</p>
-
-<p>
-When you have dreams,
-I want to support them.
-</p>
-
-<p>
-When you're tired,
-I want to be someone who brings
-peace instead of more pressure.
-</p>
-
-<p>
-And when life becomes difficult,
-I don't want to disappear.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- 13 -->
-
-<section class="story">
-
-<div class="inner">
-
-<div class="num">CHAPTER 13</div>
-
-<h2>
-One promise<br>
-from my <em>heart.</em>
-</h2>
-
-<p>
-I promise to try to stay honest with you.
-</p>
-
-<p>
-I promise to protect the trust
-you give me.
-</p>
-
-<p>
-I promise to listen when you're upset.
-</p>
-
-<p>
-I promise to support your dreams,
-even when I don't know what
-those dreams will become yet.
-</p>
-
-<div class="quote">
-I don't need to know every destination
-to want to stand beside you
-while you find it.
+I don't want to be another reason
+you feel pressure.
+I want to be someone
+who brings you peace.
 </div>
 
 </div>
@@ -1290,17 +862,19 @@ while you find it.
 </section>
 
 
-<!-- 14 -->
+<!-- CHAPTER 9 -->
 
 <section class="story">
 
-<div class="inner">
+<div class="story-inner">
 
-<div class="num">CHAPTER 14</div>
+<div class="chapter">
+CHAPTER 09
+</div>
 
 <h2>
-The future I secretly<br>
-dream <em>about.</em>
+The future I
+<span>dream about.</span>
 </h2>
 
 <p>
@@ -1308,17 +882,7 @@ I dream about traveling together.
 </p>
 
 <p>
-Not because I need some perfect
-movie-like life.
-</p>
-
-<p>
-But because I want ordinary moments
-to become memories with you.
-</p>
-
-<p>
-I dream about waking up beside you.
+Waking up beside you.
 </p>
 
 <p>
@@ -1337,12 +901,10 @@ Growing together.
 Growing old together.
 </p>
 
-<div class="big">
-<div>
-Not a perfect life.
-<br>
-<span>A peaceful one.</span>
-</div>
+<div class="quote">
+I don't need a perfect life.
+I want a peaceful one,
+with someone I love.
 </div>
 
 </div>
@@ -1350,133 +912,50 @@ Not a perfect life.
 </section>
 
 
-<!-- 15 PHOTO -->
+<!-- CHAPTER 10 -->
 
 <section class="story">
 
-<div class="inner">
+<div class="story-inner">
 
-<div class="num">CHAPTER 15</div>
-
-<h2>
-A picture of you<br>
-can hold a thousand <em>feelings.</em>
-</h2>
-
-<div class="photo">
-<span>
-SANA'S SECOND PHOTO<br><br>
-PHOTO PLACEHOLDER<br><br>
-We'll add the real photo later.
-</span>
+<div class="chapter">
+CHAPTER 10
 </div>
 
-<p>
-When I see you,
-I don't only see how beautiful you are.
-</p>
-
-<p>
-I see the person whose kindness,
-honesty, patience and little habits
-slowly became important to me.
-</p>
-
-<p>
-I see the girl whose name can make
-me feel stress-free.
-</p>
-
-<p>
-I see someone I feel lucky to have
-in my life.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- 16 -->
-
-<section class="story">
-
-<div class="inner">
-
-<div class="num">CHAPTER 16</div>
-
 <h2>
-If you ever<br>
-doubt my <em>heart...</em>
+If things ever become
+<span>difficult...</span>
 </h2>
 
 <p>
-I want you to remember this:
-</p>
-
-<div class="big">
-<div>
-My love for you is
-<br>
-<span>pure and deep.</span>
-</div>
-</div>
-
-<p>
-I'm not saying that because
-I want a beautiful sentence.
+I don't want to run away.
 </p>
 
 <p>
-I'm saying it because that's
-how I genuinely feel.
+If I make a mistake,
+I want to say sorry.
 </p>
 
 <p>
-I don't want to love you only
-when everything is easy.
+I want to explain honestly.
 </p>
 
 <p>
-I want to learn how to love you
-through the difficult days too.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- 17 -->
-
-<section class="story">
-
-<div class="inner">
-
-<div class="num">CHAPTER 17</div>
-
-<h2>
-There is one thing<br>
-I hope you never <em>doubt.</em>
-</h2>
-
-<p>
-I don't want you to ever think
-that my feelings are something
-temporary or something I take casually.
+I want to listen.
 </p>
 
 <p>
-I feel lucky to be with you.
-</p>
-
-<p>
-And if I had to choose again,
-knowing everything I know now...
+I want to try to repair
+what I hurt.
 </p>
 
 <div class="quote">
-I would still choose you.
+Because leaving is easy.
+Choosing to stay,
+listen,
+understand,
+and try again
+takes love.
 </div>
 
 </div>
@@ -1484,253 +963,61 @@ I would still choose you.
 </section>
 
 
-<!-- 18 -->
+<!-- REVEAL -->
 
 <section class="story">
 
-<div class="inner">
+<div class="story-inner">
 
-<div class="num">CHAPTER 18</div>
+<div class="chapter">
+A LITTLE SECRET
+</div>
 
 <h2>
-A tiny secret<br>
-for <em>Sana.</em>
+There is something
+I want you to
+<span>remember.</span>
 </h2>
 
 <p>
-You already know I love talking to you.
+Sometimes you don't need
+to do anything special.
 </p>
 
 <p>
-But there is something else.
+Sometimes simply knowing
+you're there is enough
+to change my day.
 </p>
 
-<p>
-Sometimes I don't even need
-a long conversation.
-</p>
+<button
+class="reveal-button"
+onclick="showSecret()">
 
-<p>
-Sometimes simply knowing you're there
-is enough to make my day feel different.
-</p>
+OPEN MY LITTLE SECRET ❤️
 
-<button class="reveal" onclick="reveal('secret1')">
-OPEN THE LITTLE SECRET
 </button>
 
-<div id="secret1" class="message hidden">
-
-<p>
-If you ever wonder whether your presence
-matters to me...
-</p>
-
-<p>
-It does.
-</p>
-
-<p>
-More than you probably realize.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- 19 -->
-
-<section class="story">
-
-<div class="inner">
-
-<div class="num">CHAPTER 19</div>
-
-<h2>
-About my <em>anger.</em>
-</h2>
-
-<p>
-There is one part of me you may not always
-understand.
-</p>
-
-<p>
-My anger.
-</p>
-
-<p>
-I know I am not perfect.
-</p>
-
-<p>
-Sometimes I can become angry.
-</p>
-
-<p>
-But underneath that anger,
-there is something very simple
-I wish you understood.
-</p>
-
-<div class="big">
-<div>
-Sometimes I don't need
-<br>
-<span>an argument.</span>
-<br><br>
-Sometimes I just need
-<br>
-<span>a hug.</span>
-</div>
-</div>
-
-<p>
-Not because you are responsible
-for fixing me.
-</p>
-
-<p>
-But because sometimes closeness
-reminds me what actually matters.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- 20 -->
-
-<section class="story">
-
-<div class="inner">
-
-<div class="num">CHAPTER 20</div>
-
-<h2>
-Thank you<br>
-for being in my <em>life.</em>
-</h2>
-
-<p>
-If someone asked me what I'm most
-grateful for...
-</p>
-
-<p>
-I wouldn't need a complicated answer.
-</p>
-
-<div class="quote">
-I'm grateful that you are in my life.
-</div>
-
-<p>
-That's it.
-</p>
-
-<p>
-Your presence itself became something
-I'm thankful for.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- 21 -->
-
-<section class="story">
-
-<div class="inner">
-
-<div class="num">CHAPTER 21</div>
-
-<h2>
-What I want<br>
-you to <em>remember.</em>
-</h2>
-
-<p>
-Remember your eyes.
-</p>
-
-<p>
-Because they were the first thing
-that caught me.
-</p>
-
-<p>
-Remember your heart.
-</p>
-
-<p>
-Because it was the real reason
-I stayed.
-</p>
-
-<p>
-Remember the tiny things about yourself
-that you think nobody notices.
-</p>
-
-<p>
-I notice them.
-</p>
-
-<p>
-And somehow,
-I love them.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- 22 -->
-
-<section class="story">
-
-<div class="inner">
-
-<div class="num">CHAPTER 22</div>
-
-<h2>
-And now<br>
-I need to tell you <em>everything.</em>
-</h2>
-
-<div class="love-card">
-
-<div class="heart-icon">♥</div>
+<div
+id="secret"
+class="secret">
 
 <p>
 Sana...
 </p>
 
 <p>
-I don't know what the future
-will look like.
+If you ever wonder
+whether your presence
+matters to me,
 </p>
 
 <p>
-I don't know what every tomorrow
-will bring.
+the answer is yes.
 </p>
 
 <p>
-But I know what I feel today.
-</p>
-
-<p>
-And I know that what I feel for you
-comes from a very deep place in me.
+More than you probably know.
 </p>
 
 </div>
@@ -1740,22 +1027,25 @@ comes from a very deep place in me.
 </section>
 
 
-<!-- FINAL LETTER -->
+<!-- LETTER -->
 
 <section class="story">
 
-<div class="inner">
+<div class="story-inner">
 
-<div class="num">THE LETTER I COULDN'T FIT INTO A MESSAGE</div>
+<div class="chapter">
+THE LETTER
+</div>
 
 <h2>
-Sana,<br>
-this is my <em>heart.</em>
+Sana,
+<br>
+this is my
+<span>heart.</span>
 </h2>
 
 <p>
-We met through something as ordinary
-as Instagram.
+We met through Instagram.
 </p>
 
 <p>
@@ -1766,124 +1056,77 @@ One hello.
 
 <p>
 And somehow,
-that little hello became you.
+that little hello became
+something I never expected.
 </p>
 
 <p>
-You became the person whose messages
-I wait for.
+You became the person
+whose messages I wait for.
 </p>
 
 <p>
-The person whose presence can make me
-feel stress-free.
+The person whose presence
+can make me feel stress-free.
 </p>
 
 <p>
-The person whose eyes first attracted me,
-but whose heart made me fall.
+The person whose eyes
+first attracted me,
+but whose heart made me stay.
 </p>
 
 <p>
-The person whose habits,
-thinking,
-anger,
-kindness,
-honesty,
-patience,
-and tiny things
-slowly became things I care about.
+I love your realness.
+Your heart.
+Your habits.
+Your thinking.
+Your kindness.
+Your honesty.
+Even your little things.
 </p>
 
 <p>
-You became someone I feel safe with.
+I feel lucky to have you
+in my life.
 </p>
 
 <p>
-And when you told me
-“I love you too,”
-my heart was shaking.
-I almost couldn't believe it was real.
+And I want you to know
+that my love comes from
+a deep place in my heart.
 </p>
 
-<p>
-I don't know whether I will ever
-find the perfect words for what that
-moment meant to me.
-</p>
-
-<p>
-But I want you to know this:
-</p>
-
-<div class="big">
-<div>
-My love for you is
-<br>
-<span>pure.</span>
-<br><br>
-And it comes from
-<br>
-<span>deep inside my heart.</span>
-</div>
+<div class="quote">
+I love you not because
+you are perfect,
+but because you are you.
 </div>
 
 <p>
 I want to be honest with you.
+</p>
+
+<p>
 I want to protect your trust.
-I want to listen when you're upset.
-I want to support your dreams.
 </p>
 
 <p>
-I want to be your safe place.
-Your biggest supporter.
-Your peaceful person.
+I want to listen.
 </p>
 
 <p>
-And I want us to keep choosing each other
-no matter what happens.
+I want to support you.
 </p>
 
 <p>
-I dream about traveling with you.
-Waking up beside you.
-Building a peaceful life.
-Supporting each other.
-And growing old together.
+I want to be your safest place.
 </p>
 
 <p>
-Maybe those things are far away.
-Maybe life will surprise us.
-</p>
-
-<p>
-But if there is one thing
-I want you to remember,
-it's this:
-</p>
-
-<div class="quote">
-I feel incredibly lucky
-that you are part of my life.
-</div>
-
-<p>
-And if I ever have to choose again...
-</p>
-
-<p>
-I know who my heart will look for.
-</p>
-
-<p>
-You.
-</p>
-
-<p>
-Sana.
+And no matter what happens,
+I want us to keep choosing
+each other.
 </p>
 
 </div>
@@ -1907,17 +1150,16 @@ For you,
 <span class="red">Sana.</span>
 </h2>
 
-<div class="final-line">
-
-<span>I love you forever.</span>
-
-<span>❤️ You are my safest place.</span>
-
-<span>🌹 Thank you for becoming part of my life.</span>
-
-<span>🖤❤️ If I had to choose again, I'd still choose you.</span>
-
-</div>
+<p>
+I love you forever. ❤️
+<br><br>
+You are my safest place.
+<br><br>
+I feel lucky to have you.
+<br><br>
+And if I had to choose again,
+I'd still choose you.
+</p>
 
 <div class="signature">
 — From the heart of the boy
@@ -1929,955 +1171,36 @@ who started with one “Hello.”
 </section>
 
 
-<footer>
-
-<p>
-MADE WITH A HEART THAT CHOSE SANA ❤️
-</p>
-
-</footer>
-
-</main>
-
-
-<script>
-
-/* ENTER */
-
-function enterStory(){
-
-    document.getElementById("intro").classList.add("hide");
-
-    document.getElementById("main").classList.add("show");
-
-    startHearts();
-
-}
-
-
-/* REVEAL */
-
-function reveal(id){
-
-    const box=document.getElementById(id);
-
-    box.classList.toggle("hidden");
-
-}
-
-
-/* FLOATING HEARTS */
-
-function createHeart(){
-
-    const heart=document.createElement("div");
-
-    heart.className="heart";
-
-    heart.innerHTML=Math.random()>.5 ? "♥" : "♡";
-
-    heart.style.left=Math.random()*100+"vw";
-
-    heart.style.fontSize=(9+Math.random()*14)+"px";
-
-    const duration=8+Math.random()*8;
-
-    heart.style.animationDuration=duration+"s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },duration*1000);
-
-}
-
-
-function startHearts(){
-
-    setInterval(createHeart,900);
-
-}
-
-</script>
-
-</body>
-</html>i reire    background: #030303;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: opacity 1.5s ease, visibility 1.5s ease;
-}
-
-#intro.hide {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.intro-content {
-    width: 90%;
-    max-width: 500px;
-}
-
-.intro-small {
-    color: #888;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    margin-bottom: 25px;
-    animation: fadeIn 2s ease;
-}
-
-.intro-title {
-    font-size: clamp(35px, 10vw, 70px);
-    color: #fff;
-    line-height: 1.05;
-    animation: titleAppear 3s ease;
-}
-
-.intro-title span {
-    color: #e50935;
-    text-shadow: 0 0 30px rgba(229, 9, 53, .5);
-}
-
-.intro-line {
-    width: 0;
-    height: 1px;
-    background: #e50935;
-    margin: 30px auto;
-    animation: lineGrow 2s ease forwards;
-    animation-delay: 1s;
-}
-
-.intro-text {
-    color: #aaa;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.8;
-    opacity: 0;
-    animation: fadeIn 2s ease forwards;
-    animation-delay: 2s;
-}
-
-.enter-btn {
-    margin-top: 35px;
-    background: transparent;
-    border: 1px solid rgba(229, 9, 53, .6);
-    color: #fff;
-    padding: 14px 28px;
-    border-radius: 50px;
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-    letter-spacing: 2px;
-    cursor: pointer;
-    opacity: 0;
-    animation: fadeIn 2s ease forwards;
-    animation-delay: 3s;
-    transition: .4s;
-}
-
-.enter-btn:hover {
-    background: #e50935;
-    box-shadow: 0 0 30px rgba(229, 9, 53, .35);
-}
-
-/* ---------- HEART PARTICLES ---------- */
-
-.heart {
-    position: fixed;
-    bottom: -20px;
-    color: #e50935;
-    pointer-events: none;
-    z-index: 2;
-    animation: floatHeart linear forwards;
-    opacity: .6;
-}
-
-@keyframes floatHeart {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: .7;
-    }
-
-    90% {
-        opacity: .3;
-    }
-
-    100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-/* ---------- MAIN ---------- */
-
-main {
-    display: none;
-}
-
-main.show {
-    display: block;
-}
-
-/* ---------- HERO ---------- */
-
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 30px 20px;
-    position: relative;
-}
-
-.hero-inner {
-    max-width: 700px;
-}
-
-.chapter {
-    color: #e50935;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-}
-
-.hero h1 {
-    font-size: clamp(48px, 14vw, 100px);
-    font-weight: normal;
-    line-height: .95;
-    margin-bottom: 25px;
-}
-
-.hero h1 span {
-    display: block;
-    color: #e50935;
-    font-style: italic;
-}
-
-.hero-subtitle {
-    color: #aaa;
-    font-size: 16px;
-    line-height: 1.9;
-    max-width: 520px;
-    margin: auto;
-}
-
-.scroll-hint {
-    margin-top: 60px;
-    color: #555;
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    letter-spacing: 3px;
-    animation: pulse 2s infinite;
-}
-
-/* ---------- SECTIONS ---------- */
-
-section.story {
-    min-height: 100vh;
-    padding: 110px 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.story-inner {
-    width: 100%;
-    max-width: 720px;
-}
-
-.story-number {
-    color: #e50935;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-}
-
-.story h2 {
-    font-size: clamp(35px, 9vw, 62px);
-    font-weight: normal;
-    line-height: 1.1;
-    margin-bottom: 35px;
-}
-
-.story h2 em {
-    color: #e50935;
-    font-weight: normal;
-}
-
-.story p {
-    color: #c2c2c2;
-    font-size: 17px;
-    line-height: 2;
-    margin-bottom: 24px;
-}
-
-.highlight {
-    border-left: 2px solid #e50935;
-    padding-left: 20px;
-    margin: 40px 0;
-    color: #fff;
-    font-size: 21px;
-    line-height: 1.7;
-    font-style: italic;
-}
-
-/* ---------- PHOTO PLACEHOLDER ---------- */
-
-.photo-placeholder {
-    width: 100%;
-    max-width: 420px;
-    aspect-ratio: 4 / 5;
-    margin: 45px auto;
-    border: 1px solid rgba(229, 9, 53, .35);
-    background:
-        radial-gradient(circle at center, rgba(229, 9, 53, .12), transparent 60%),
-        #090909;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.photo-placeholder::before {
-    content: "";
-    position: absolute;
-    inset: 12px;
-    border: 1px solid rgba(255,255,255,.05);
-}
-
-.photo-placeholder span {
-    color: #666;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 20px;
-}
-
-/* ---------- SPECIAL QUOTE ---------- */
-
-.big-quote {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 50px 25px;
-    background:
-        radial-gradient(circle, rgba(229,9,53,.13), transparent 55%);
-}
-
-.big-quote p {
-    max-width: 700px;
-    font-size: clamp(28px, 7vw, 52px);
-    line-height: 1.4;
-    color: #fff;
-}
-
-.big-quote span {
-    color: #e50935;
-}
-
-/* ---------- BUTTON ---------- */
-
-.reveal-btn {
-    display: block;
-    margin: 40px auto;
-    padding: 15px 25px;
-    border-radius: 40px;
-    border: 1px solid rgba(229,9,53,.5);
-    background: transparent;
-    color: white;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
-    letter-spacing: 1px;
-    transition: .4s;
-}
-
-.reveal-btn:hover {
-    background: #e50935;
-}
-
-.hidden-message {
-    display: none;
-    padding: 25px;
-    border: 1px solid rgba(229,9,53,.2);
-    background: rgba(255,255,255,.02);
-    animation: reveal .8s ease;
-}
-
-.hidden-message.show {
-    display: block;
-}
-
-.hidden-message p {
-    margin: 0;
-}
-
-/* ---------- DIVIDER ---------- */
-
-.divider {
-    width: 70px;
-    height: 1px;
-    background: #e50935;
-    margin: 60px auto;
-    opacity: .6;
-}
-
-/* ---------- FOOTER ---------- */
-
-footer {
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 50px 25px;
-}
-
-footer p {
-    color: #555;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 2px;
-}
-
-/* ---------- ANIMATIONS ---------- */
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes titleAppear {
-    from {
-        opacity: 0;
-        transform: scale(.9);
-        filter: blur(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-        filter: blur(0);
-    }
-}
-
-@keyframes lineGrow {
-    to {
-        width: 100px;
-    }
-}
-
-@keyframes pulse {
-    0%,100% {
-        opacity: .3;
-    }
-
-    50% {
-        opacity: .8;
-    }
-}
-
-@keyframes reveal {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ---------- MOBILE ---------- */
-
-@media (max-width: 600px) {
-
-    .hero {
-        min-height: 100svh;
-    }
-
-    section.story {
-        min-height: auto;
-        padding: 100px 20px;
-    }
-
-    .story p {
-        font-size: 16px;
-        line-height: 1.9;
-    }
-
-    .highlight {
-        font-size: 19px;
-    }
-
-    .photo-placeholder {
-        max-width: 340px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<!-- INTRO -->
-
-<div id="intro">
-    <div class="intro-content">
-
-        <div class="intro-small">
-            A little something from my heart
-        </div>
-
-        <div class="intro-title">
-            For <span>Sana</span>
-        </div>
-
-        <div class="intro-line"></div>
-
-        <div class="intro-text">
-            This isn't just a website.<br>
-            It's a small piece of my heart<br>
-            that I wanted you to see.
-        </div>
-
-        <button class="enter-btn" onclick="enterStory()">
-            ENTER MY HEART
-        </button>
-
-    </div>
 </div>
 
 
-<!-- MAIN STORY -->
-
-<main id="main">
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <div class="hero-inner">
-
-            <div class="chapter">
-                Before you read anything...
-            </div>
-
-            <h1>
-                My
-                <span>Safest Place</span>
-            </h1>
-
-            <p class="hero-subtitle">
-                Sana, there are things I can say in a message,
-                things I can say in a call,
-                and then there are things that are too deep
-                to fit inside an ordinary conversation.
-                <br><br>
-                So I made you a place for them.
-            </p>
-
-            <div class="scroll-hint">
-                SCROLL SLOWLY ↓
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CHAPTER 1 -->
-
-    <section class="story">
-
-        <div class="story-inner">
-
-            <div class="story-number">
-                CHAPTER 01
-            </div>
-
-            <h2>
-                It started with<br>
-                one little <em>hello.</em>
-            </h2>
-
-            <p>
-                I wasn't looking for a love story that day.
-                I was simply scrolling through Instagram,
-                looking at profiles, passing time...
-                and then I saw yours.
-            </p>
-
-            <p>
-                I don't know what made me stop.
-                Maybe it was your eyes.
-                Maybe it was something I couldn't explain.
-                Maybe it was simply one of those strange
-                moments life creates without warning.
-            </p>
-
-            <div class="highlight">
-                I saw your profile.
-                I looked at you.
-                And somehow, my fingers decided to type
-                the first chapter of us.
-            </div>
-
-            <p>
-                I sent you one simple word:
-            </p>
-
-            <div class="big-quote">
-                <p>
-                    “<span>Hello.</span>”
-                </p>
-            </div>
-
-            <p>
-                It was such a small word.
-                Nothing dramatic.
-                Nothing that looked like the beginning
-                of something important.
-            </p>
-
-            <p>
-                But sometimes the biggest stories
-                begin with the smallest decisions.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- CHAPTER 2 -->
-
-    <section class="story">
-
-        <div class="story-inner">
-
-            <div class="story-number">
-                CHAPTER 02
-            </div>
-
-            <h2>
-                And then<br>
-                you <em>replied.</em>
-            </h2>
-
-            <p>
-                You replied politely.
-                And somehow that simple reply
-                became the reason another conversation started.
-            </p>
-
-            <p>
-                We started chatting on Instagram.
-                Nothing was forced.
-                Nothing needed to be perfect.
-                We simply talked.
-            </p>
-
-            <p>
-                And little by little,
-                talking to you stopped feeling like
-                talking to someone I had just found online.
-            </p>
-
-            <p>
-                It started feeling natural.
-            </p>
-
-            <div class="highlight">
-                I didn't know where our conversations
-                were going.
-                I only knew that I wanted them to continue.
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CHAPTER 3 -->
-
-    <section class="story">
-
-        <div class="story-inner">
-
-            <div class="story-number">
-                CHAPTER 03
-            </div>
-
-            <h2>
-                Your eyes<br>
-                caught me <em>first.</em>
-            </h2>
-
-            <div class="photo-placeholder">
-                <span>
-                    Sana's photo will live here ❤️<br><br>
-                    We'll add it later through GitHub.
-                </span>
-            </div>
-
-            <p>
-                I'm not going to lie.
-                Your eyes were one of the first things
-                that attracted me to you.
-            </p>
-
-            <p>
-                There was something about them.
-                Something that made me stop and look.
-            </p>
-
-            <p>
-                They gave me that strange combination
-                of peace and nervousness.
-                Warmth and excitement.
-                The feeling of getting lost
-                without wanting to find my way back.
-            </p>
-
-            <div class="highlight">
-                Your eyes caught my attention.
-                But your heart made me stay.
-            </div>
-
-            <p>
-                Because eventually I realized something:
-                I wasn't falling for a picture.
-            </p>
-
-            <p>
-                I was starting to fall for the person
-                behind it.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- CHAPTER 4 -->
-
-    <section class="story">
-
-        <div class="story-inner">
-
-            <div class="story-number">
-                CHAPTER 04
-            </div>
-
-            <h2>
-                I started<br>
-                knowing <em>you.</em>
-            </h2>
-
-            <p>
-                The more I talked to you,
-                the more I started seeing the real you.
-            </p>
-
-            <p>
-                Your pure heart.
-                Your honesty.
-                Your kindness.
-                Your patience.
-                Your ambition.
-                The way you treat people.
-                The way you handle problems.
-            </p>
-
-            <p>
-                I noticed your habits.
-                Your thinking.
-                Even your anger.
-                Even those tiny things that probably
-                seem unimportant to everyone else.
-            </p>
-
-            <p>
-                But somehow those tiny things
-                became part of the person I started loving.
-            </p>
-
-            <div class="highlight">
-                I didn't need you to pretend to be perfect.
-                I liked you because you were real.
-            </div>
-
-            <p>
-                You never had to become someone else
-                to make me care about you.
-            </p>
-
-            <p>
-                You were simply Sana.
-            </p>
-
-            <p>
-                And somehow...
-                that became enough to make my heart
-                choose you.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- GENTLE REVEAL -->
-
-    <section class="story">
-
-        <div class="story-inner">
-
-            <div class="story-number">
-                A LITTLE SECRET
-            </div>
-
-            <h2>
-                There is something<br>
-                about your <em>name.</em>
-            </h2>
-
-            <p>
-                I don't know how to explain it properly.
-                But when I see your name,
-                something inside me becomes quieter.
-            </p>
-
-            <p>
-                Stress feels smaller.
-                My mind feels lighter.
-                And somehow I feel like I can breathe.
-            </p>
-
-            <button class="reveal-btn" onclick="revealMessage()">
-                TAP TO READ
-            </button>
-
-            <div id="secret" class="hidden-message">
-
-                <p>
-                    Maybe that's why your name became more
-                    than just a name to me.
-                    <br><br>
-                    <strong>Sana.</strong>
-                    <br><br>
-                    Somehow, just seeing those four letters
-                    can make me feel stress-free.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTINUE MARKER -->
-
-    <section class="big-quote">
-
-        <p>
-            And I still hadn't realized
-            <br>
-            <span>how deeply I was falling.</span>
-        </p>
-
-    </section>
-
-
-    <footer>
-        <p>
-            PART ONE • THERE IS MUCH MORE TO SAY
-        </p>
-    </footer>
-
-</main>
-
-
 <script>
 
-/* ENTER STORY */
-
-function enterStory() {
+function enterHeart(){
 
     const intro = document.getElementById("intro");
     const main = document.getElementById("main");
 
-    intro.classList.add("hide");
-    main.classList.add("show");
+    intro.style.opacity = "0";
 
-    startHearts();
-}
+    setTimeout(function(){
 
+        intro.style.display = "none";
 
-/* SECRET MESSAGE */
+        main.classList.add("show");
 
-function revealMessage() {
+        window.scrollTo(0,0);
 
-    const message = document.getElementById("secret");
-
-    message.classList.toggle("show");
+    },1200);
 
 }
 
 
-/* FLOATING HEARTS */
+function showSecret(){
 
-function createHeart() {
+    const secret = document.getElementById("secret");
 
-    const heart = document.createElement("div");
-
-    heart.className = "heart";
-    heart.innerHTML = Math.random() > .5 ? "♥" : "♡";
-
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (10 + Math.random() * 14) + "px";
-
-    const duration = 8 + Math.random() * 8;
-
-    heart.style.animationDuration = duration + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, duration * 1000);
-}
-
-
-function startHearts() {
-
-    setInterval(() => {
-        createHeart();
-    }, 900);
+    secret.classList.toggle("show");
 
 }
 
